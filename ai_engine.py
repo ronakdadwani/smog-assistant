@@ -170,12 +170,8 @@ def generate_followup_chat_reply(
     client = _get_api_client(api_key)
     if not client:
         return (
-            "*(Operating in simulated offline mode - enter your GEMINI_API_KEY in the sidebar or .env for live Gemini answers)*\n\n"
-            f"Based on the current AQI of **{aqi_data.get('aqi')}** ({aqi_data.get('severity_label', aqi_data.get('category'))}):\n"
-            "- **Indoor Protection**: Keep windows tightly sealed during morning thermal inversion (6 AM - 10 AM). Run true HEPA or DIY box-fan filtration in occupied bedrooms.\n"
-            "- **Masks**: Use an N95 or FFP2 respirator with tight seal whenever stepping outside.\n"
-            "- **Vulnerable Members**: Keep asthmatic children and elderly family members indoors when AQI exceeds 150.\n\n"
-            "⚠️ *Reminder: This is non-medical general guidance.*"
+            "🔑 **Gemini API Key Required**: Please enter your free `GEMINI_API_KEY` in the sidebar "
+            "to chat with the AI assistant. You can get a free key in 30 seconds at [Google AI Studio](https://aistudio.google.com/)."
         )
 
     from google.genai import types

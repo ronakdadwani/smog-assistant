@@ -405,6 +405,9 @@ st.markdown("---")
 st.subheader("💬 Ask the Winter Smog Assistant")
 st.caption("Ask specific follow-up questions for your family, DIY air filters, child safety, or school transit.")
 
+if not gemini_key_input:
+    st.info("🔑 **Gemini API Key Reminder:** Enter your free [Google AI Studio API Key](https://aistudio.google.com/) in the sidebar to activate live Q&A with the AI assistant.")
+
 if "messages" not in st.session_state:
     st.session_state.messages = [
         {
