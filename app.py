@@ -92,16 +92,23 @@ with st.sidebar:
     preset_cities = [
         "Delhi (Hazardous Smog)",
         "Hyderabad (Moderate Air)",
+        "Mumbai (Urban Air)",
+        "Bengaluru (Moderate Air)",
+        "Kolkata (Winter Smog)",
         "Lahore (Hazardous Smog)",
         "Beijing (Winter Smog)",
         "London (Moderate Air)",
         "New York (Clean Air)",
-        "Custom City..."
+        "Tokyo (Clean Air)",
+        "Paris (Clean Air)",
+        "Custom City Search..."
     ]
-    city_choice = st.selectbox("Select location:", preset_cities, index=0)
+    city_choice = st.selectbox("Select location or search any city:", preset_cities, index=0)
 
-    if city_choice == "Custom City...":
-        selected_city = st.text_input("Enter City Name:", value="Paris").strip()
+    if city_choice == "Custom City Search...":
+        selected_city = st.text_input("Enter any city worldwide (e.g. Pune, Chennai, Dubai, Chicago):", value="Pune").strip()
+        if not selected_city:
+            selected_city = "Pune"
     else:
         selected_city = city_choice.split(" (")[0]
 
